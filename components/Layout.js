@@ -1,14 +1,14 @@
-import Header from './Header'
+import Head from 'next/head'
+// import layoutStyle from 'styles/index.scss'
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
-
-export default (props) => (
-  <div style={layoutStyle}>
-    <Header />
-    {props.children}
+export default ({ children ,title = 'The testing ...'  }) => (
+  <div>
+    <Head>
+         <title>{ title }</title>
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+          {/* <style dangerouslySetInnerHTML={{__html: layoutStyle}}></style> */}
+    </Head>
+      { children }
   </div>
 )
